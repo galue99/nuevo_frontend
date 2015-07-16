@@ -1,0 +1,164 @@
+<!doctype html>
+<html ng-app="fenixApp" lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>fenixApp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="assets/css/AdminLTE.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/ionicons.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/eeh-navigation/dist/eeh-navigation.css" />
+        <link rel="stylesheet" href="../bower_components/sweetalert/dist/sweetalert.css" />
+        <link rel="stylesheet" href="../bower_components/isteven-angular-multiselect/isteven-multi-select.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css({.tmp/serve,src}) styles/app.css -->
+        <!-- inject:css -->
+        <!-- css files will be automatically insert here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+
+    </head>
+    <body class="skin-blue">
+        <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+                <header class="header">
+
+        <!--    <a href="index.html" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            <!--     <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a class="navbar-brand" href="#">Sistema de Emergencia Fenix</a>
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn" data-toggle="offcanvas" role="button">
+
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>Jane Doe <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header bg-light-blue">
+                                    <img src="assets/images/avatar3.png" class="img-circle" alt="User Image" />
+                                    <p>
+                                        Jane Doe
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#/login" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side strech">
+                <!-- Content Header (Page header) -->
+                <!-- Main content -->
+                <!-- sidebar -->
+                <br>
+                <eeh-navigation-sidebar root-menu-name="'nav'"
+                        collapsed-sidebar-icon-class="fa-arrow-left"
+                        expanded-sidebar-icon-class="fa-arrow-right"
+                        collapsed-menu-item-icon-class="fa-chevron-left"
+                        expanded-menu-item-icon-class="fa-chevron-down">
+                    <ui-view></ui-view>
+                </eeh-navigation-sidebar>
+
+                <!-- /.content -->
+                
+            </aside>
+            <!-- /.right-side -->
+        </div>
+        <!-- ./wrapper -->
+        <br>
+        
+        <!-- build:js(src) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-animate/angular-animate.js"></script>
+        <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="../bower_components/angular-touch/angular-touch.js"></script>
+        <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="../bower_components/angular-resource/angular-resource.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="../bower_components/ng-websocket/ng-websocket.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
+        <script src="../bower_components/angular-mask/dist/ngMask.js"></script>
+        <script src="../bower_components/angular-translate/angular-translate.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/eeh-navigation/dist/eeh-navigation.js"></script>
+        <script src="../bower_components/eeh-navigation/dist/eeh-navigation.tpl.js"></script>
+        <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../bower_components/angular-h-sweetalert/dist/ngSweetAlert.js"></script>
+        <script src="../bower_components/angular-h-sweetalert/dist/ngSweetAlert.min.js"></script>
+        <script src="../bower_components/isteven-angular-multiselect/isteven-multi-select.js"></script>
+        <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
+        <script src="../bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+        <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+
+        <!-- inject:js -->
+        <script src="app/index.js"></script>
+        <script src="app/components/navbar/navbar.controller.js"></script>
+        <script src="app/controllers/supervisor.controller.js"></script>
+        <script src="app/controllers/modal.controller.js"></script>
+        <script src="app/controllers/main.controller.js"></script>
+        <script src="app/controllers/georeferenciado.controller.js"></script>
+        <script src="app/controllers/ficha.controller.js"></script>
+        <script src="app/controllers/despachador.controller.js"></script>
+        <script src="app/controllers/bandeja.controller.js"></script>
+        <script src="app/controllers/ayuda.controller.js"></script>
+        <script src="app/controllers/agencia2.controller.js"></script>
+        <script src="app/controllers/agencia1.controller.js"></script>
+        <script src="app/controllers/agencia.controller.js"></script>
+        <script src="app/controllers/admin.controller.js"></script>
+        <!-- endinject -->
+        <!-- inject:partials -->
+        <!-- angular templates will be automatically converted in js and inserted here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>

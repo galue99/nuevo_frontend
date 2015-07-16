@@ -1,0 +1,164 @@
+<div ng-controller="AgenciaCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+         <div class="modal-header">
+            <h3 class="modal-title">Editar Agencia </h3>
+         </div>
+         <div class="modal-body">
+            
+         </div>
+         <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+         </div>
+    </script>
+</div>
+<form role="form" ng-submit="save()">
+   <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+         <div class="col-lg-3 col-xs-12 pull-left">
+            <div class="id_p">
+               <p><i class="glyphicon glyphicon-calendar"></i><span><span></span><b>Fecha y Hora Actual: </b>{{showDate() | date : 'short'}} </span></p>
+            </div>
+            <input type="hidden" ng-model="user.fecha" value="{{showDate() | date : 'short'}}">
+         </div>
+         <div class="col-lg-2 col-xs-6 pull-right spacing-buttons" style="padding-top:4px">
+            <a class="btn btn-success btn-lg btn-block" ng-click="save(user)" role="button">
+            <i class="glyphicon glyphicon-floppy-saved"></i><br>Guardar
+            </a>
+         </div>
+         <div class="col-lg-2 col-xs-6 pull-right spacing-buttons" style="padding-top:4px">
+            <a class="btn btn-danger btn-lg btn-block" role="button">
+            <i class="glyphicon glyphicon-remove"></i><br>Anular
+            </a>
+         </div>
+         <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- top row -->
+      <div class="row">
+         <div class="col-xs-12 connectedSortable">
+         </div>
+         <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+      <div class="row">
+         <!-- Left col -->
+         <section class="col-lg-12 connectedSortable">
+            <!-- Box (with bar chart) -->
+            <div class="box box-primary" id="loading-example">
+               <div class="box-header">
+                  <!-- tools box -->        
+                  <h3 class="box-title"><i class="fa fa-fw fa-edit"></i>Administrar Agencias</h3>
+               </div>
+               <!-- /.box-header -->
+               <div class="box-body no-padding">
+                  <div class="row">
+                     <div class="col-lg-12 col-sm-12 col-xs-12 spacing-buttons">
+                        <div class="{{bomberos.clase}} col-sm-offset-1 prueba">
+                           <figure class="{{bomberos.name}}"><i class="glyphicon glyphicon-fire icons"></i></figure>
+                           <div class="info">
+                              <label for=""><h4>Bomberos de Baruta</h4></label>
+                              <p>Sede: Bomberos de Baruta</p>
+                           </div>
+                           <div class="col-lg-6 pull-right options">
+                              <label for="">Disponible:</label>
+                              <label>
+                              <input type="radio" ng-model="bomberos.name" ng-click="abc(bomberos)" value="disponible">
+                              Si
+                           </label>
+                           <label>
+                              <input type="radio" ng-model="bomberos.name" ng-click="abc(bomberos)" value="no-disponible">
+                              No
+                           </label>&nbsp;&nbsp;
+                           <button class="btn btn-success" ng-click="open('lg')">Editar</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12 col-sm-12 col-xs-12 spacing-buttons">
+                        <div class="{{salud.clase}} col-sm-offset-1 prueba">
+                           <figure class="{{salud.name}}"><i class="glyphicon glyphicon-plus icons"></i></figure>
+                           <div class="info">
+                              <label for=""><h4>Salud de Baruta</h4></label>
+                              <p>Sede: Salud de Baruta</p>
+                           </div>
+                           <div class="col-lg-6 pull-right options">
+                              <label for="">Disponible:</label>
+                              <label>
+                              <input type="radio" ng-model="salud.name" ng-click="abc(salud)" value="disponible">
+                              Si
+                           </label>
+                           <label>
+                              <input type="radio" ng-model="salud.name" ng-click="abc(salud)" value="no-disponible">
+                              No
+                           </label>&nbsp;&nbsp;
+                           <button class="btn btn-success" ng-click="open('lg')">Editar</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12 col-sm-12 col-xs-12 spacing-buttons">
+                        <div class="{{policia.clase}} col-sm-offset-1 prueba">
+                           <figure class="{{policia.name}}"><i class="glyphicon glyphicon-user icons"></i></figure>
+                           <div class="info">
+                              <label for=""><h4>Policia de Baruta</h4></label>
+                              <p>Sede: Policia de Baruta</p>
+                           </div>
+                           <div class="col-lg-6 pull-right options">
+                              <label for="">Disponible:</label>
+                              <label>
+                              <input type="radio" ng-model="policia.name" ng-click="abc(policia)" value="disponible">
+                              Si
+                           </label>
+                           <label>
+                              <input type="radio" ng-model="policia.name" ng-click="abc(policia)" value="no-disponible">
+                              No
+                           </label>&nbsp;&nbsp;
+                           <button class="btn btn-success" ng-click="open('lg')">Editar</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12 col-sm-12 col-xs-12 spacing-buttons">
+                        <div class="{{transito.clase}} col-sm-offset-1 prueba">
+                           <figure class="{{transito.name}}"><i class="glyphicon glyphicon-road icons"></i></figure>
+                           <div class="info">
+                              <label for=""><h4>Transito de Baruta</h4></label>
+                              <p>Sede: Transito de Baruta</p>
+                           </div>
+                           <div class="col-lg-6 pull-right options">
+                              <label for="">Disponible:</label>
+                              <label>
+                              <input type="radio" ng-model="transito.name" ng-click="abc(transito)" value="disponible">
+                                 Si
+                              </label>
+                              <label>
+                              <input type="radio" ng-model="transito.name" ng-click="abc(transito)" value="no-disponible">
+                                 No
+                              </label>&nbsp;&nbsp;
+                              <button class="btn btn-success" ng-click="open('lg')">Editar</button>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- /.col -->
+                  </div>
+                  <!-- /.row - inside box -->
+               </div>
+               <!-- /.box-body -->
+               <div class="box-footer">
+                  <div class="row">
+                  </div>
+                  <!-- /.row -->
+               </div>
+               <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->           
+         </section>
+         <!-- /.Left col -->
+         <!-- right col (We are only adding the ID to make the widgets sortable)-->
+      </div>
+      <!-- /.row (main row) -->
+   </section>
+   <!-- /.content -->
+</form>
+<script src="assets/js/main.js"></script>
+

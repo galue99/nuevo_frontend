@@ -1,0 +1,106 @@
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Nombre:</label>
+                                        <input type="text" ng-model="user.nombre" name="user_nombre" class="form-control" placeholder="Nombre:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Apellido:</label>
+                                        <input ng-model="user.apellido" name="apellido" class="form-control" placeholder="Apellido:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Número de Cédula:</label>
+                                        <input type="text" ng-model="user.cedula" name="cedula" class="form-control" placeholder="Numero de Cedula:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <label for="">Cargo:</label>
+                                    <div class="form-group">
+                                        <select name="my_select" class="simple_select6 form-control">
+                                            <option>--  Operador Telefonico  --</option>
+                                            <option>--  Operador Despachador  --</option>
+                                            <option>--  Supervisor  --</option>
+                                            <option>--  Otros  --</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">ID de Usuario:</label>
+                                        <input type="text" ng-model="user.id_usuario" name="usuario" class="form-control" placeholder="ID de Usuario:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Tlf de Contacto:</label>
+                                        <input type="text" ng-model="user.tlf_contacto" name="tlf_contacto" class="form-control" placeholder="Tlf de Contacto:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Correo Electronico:</label>
+                                        <input type="text" ng-model="user.email" name="email" class="form-control" placeholder="Correo Electronico:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Departamento u Oficina:</label>
+                                        <input type="text" ng-model="user.departamento" name="departamento" class="form-control" placeholder="Departamento u Oficina:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Ubicación:</label>
+                                        <input type="text" ng-model="user.ubicacion" name="ubicacion" class="form-control" placeholder="Ubicación:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <label for="">Coordinación o Gerencia:</label>
+                                    <div class="form-group">
+                                        <select name="my_select" class="simple_select6 form-control">
+                                            <option>--  o  --</option>
+                                            <option>--  o  --</option>
+                                            <option>--  o  --</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <label for="">Roles Asignados:</label>
+                                    <select name="my_select" class="simple_select6 form-control">
+                                        <option>--  Operador Telefónico  --</option>
+                                        <option>--  Operador Despachador  --</option>
+                                        <option>--  Supervisor  --</option>
+                                        <option>--  Gestionador de Unidades  --</option>
+                                        <option>--  Consultor de Históricos  --</option>
+                                        <option>--  Unidad  --</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Asignar clave de Acceso:</label>
+                                        <input type="text" ng-model="user.asignar_clave" name="asignar_clave" class="form-control" placeholder="Asignar clave de Acceso:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="">Caducidad de la Clave:</label>
+                                        <input type="text" ng-model="user.clave" name="caducidad_clave" class="form-control" placeholder="Caducidad de la Clave:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <label for="">Estado del Usuario:</label>
+                                    <div class="form-group">
+                                        <select name="my_select" class="simple_select6 form-control">
+                                            <option>--  Activo  --</option>
+                                            <option>--  Inactivo  --</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>

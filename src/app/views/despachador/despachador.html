@@ -1,0 +1,696 @@
+<section class="row">
+    <div class="col-sm-12">
+        <div class="row col-sm-8 col-xs-12">
+            <div class="col-sm-8 col-xs-12">
+                <div class="row col-sm-12 col-md-12 Scol-xs-12">
+                    <div class="col-lg-6 col-xs-6">
+                        <label for="year" class="control-label input-group">Agencia Activa:</label>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default"><img src="assets/images/salud.png" alt="" width="17px"><i style="" class="fa fa-fw fa-arrow-down"></i></button>
+                            <button type="button" class="btn btn-default"><i style="" class="glyphicon glyphicon-plus"></i> <span style=""></span></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-6">
+                        <label for="year" class="control-label input-group">Estado del Incidente:</label>
+                        <select name="my_select" class="simple_select6">
+                            <option value="abierto">Abierto</option>
+                            <option value="en proceso">En Proceso</option>
+                            <option value="en espera">En Espera</option>
+                            <option value="cerrado">Cerrado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 ">
+                <label for="year" class="control-label input-group">Agencias Asociadas</label>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default"><img src="assets/images/salud.png" alt="" width="30px"></button>
+                    <button type="button" class="btn btn-default"><img src="assets/images/policial.png" alt="" width="30px"></button>
+                    <button type="button" class="btn btn-default"><img src="assets/images/bomberil.png" alt="" width="30px"></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="pull-right" style="padding-top:5px;">
+                <p><i class="glyphicon glyphicon-calendar"></i><b>Fecha del Suceso:</b> 13/03/2015 11:22PM</p>
+                <p style="color:red"><b>Abierto: 2hrs 43min y 20seg</b></p>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default"><i style="" class="fa fa-fw fa-lock"></i> <span style="color:black">Cerrar Ficha</span></button>
+                    <button type="button" class="btn btn-default"><i style="" class="fa fa-fw fa-save"></i> <span style="">Guardar</span></button>
+                    <button type="button" class="btn btn-default"><i style="" class="ion-printer"></i> <span style="">Imprimir Ficha</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <!-- top row -->
+    <div class="row">
+        <div class="col-xs-12 connectedSortable">            
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-12 connectedSortable">
+            <!-- Box (with bar chart) -->
+            <div class="box box-primary" id="loading-example">
+                <div class="box-header">
+                    <h3 class="box-title"><i class="fa fa-fw fa-bullhorn"></i>Tipificación del Incidente</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div class="col-xs-12">
+                        <fieldset>
+                            <div class="col-xs-12">
+                                <div class="col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Tipo de Incidente:</label>
+                                        <div>
+                                            <select name="incident_type" data-ng-model="event.incident_type"
+                                                data-ng-options="type.id as type.name for type in listIncidentType"
+                                                class="simple_select6 form-control">
+                                                <option value="">-- seleccione --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Prioridad:</label>
+                                        <input type="text" value="Alta." class="form-control" id="recipient-name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Línea:</label>
+                                        <input type="text" value="Gemic 0001" class="form-control" id="recipient-name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Télefono:</label>
+                                        <input type="text" value="555-43245234" class="form-control" id="recipient-name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="col-sm-11 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Dirección del Incidente:</label>
+                                        <textarea name="" id="" class="form-control" id="recipient-name">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 col-xs-12">
+                                    <button type="button" onclick="mapa()" class="btn btn-success"><i class="glyphicon glyphicon-globe"></i> Mapa</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- /.col -->
+                    <!-- /.row - inside box -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div class="row">                      
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+            <!-- Box (with bar chart) -->
+            <div class="box box-primary" id="loading-example">
+                <div class="box-header">
+                    <h3 class="box-title"><i class="fa fa-fw fa-edit"></i>Gestión de Unidades</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="col-sm-6 col-xs-12">
+                            <label for="">Buscar Recursos:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="email" placeholder="Buscar Recursos:">
+                                <span class="input-group-btn">
+                                <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success">Estado de la Misión</button>
+                                    <button type="button" class="btn btn-success">Llamar</button>
+                                    <button type="button" class="btn btn-success">Mensaje</button>
+                                    <button type="button" class="btn btn-success">Centrar Mapa</button>
+                                    <button type="button" class="btn btn-success">Borrar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <fieldset>
+                                <div class="table-responsive" style="margin-top:10px;">
+                                    <table class="table">
+                                        <thead>
+                                            <th></th>
+                                            <th>Recurso</th>
+                                            <th>Nombre de la Misión</th>
+                                            <th>Estado</th>
+                                            <th>Comentario</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input type="checkbox" name=""></td>
+                                                <td>8255DEM</td>
+                                                <td>Actuación Pendiente</td>
+                                                <td>
+                                                    <select>
+                                                        <option value="" >Hacia Destino</option>
+                                                    </select>
+                                                </td>
+                                                <td><input type="text" name="comentario" class="form-control" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <!-- /.row - inside box -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div class="row">
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+            <!-- Box (with bar chart) -->
+            <div class="box box-primary" id="loading-example">
+                <div class="box-header">
+                    <h3 class="box-title"><i class="fa fa-fw fa-edit"></i>Detalle del Incidente</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" ng-class="{ active:tab === 1 }"><a href="" ng-click="selectTab(1)" aria-controls="home" role="tab" data-toggle="tab" class="spacing">Solicitante</a></li>
+                            <li role="presentation" ng-class="{ active:tab === 2 }"><a href="" ng-click="selectTab(2)" aria-controls="profile" role="tab" data-toggle="tab" class="spacing">Descripción</a></li>
+                            <li role="presentation" ng-class="{ active:tab === 3 }"><a href="" ng-click="selectTab(3)" aria-controls="messages" role="tab" data-toggle="tab" class="spacing">Observaciones</a></li>
+                            <li role="presentation" ng-class="{ active:tab === 4 }"><a href="" ng-click="selectTab(4)" aria-controls="observations" role="tab" data-toggle="tab" class="spacing">Mas Información</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" ng-show="tab === 1" class="tab-pane active" id="home">
+                                <div class="col-xs-12">
+                                    <br>
+                                    <fieldset>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <span class="font-size"><b>Nombre del Denunciante:</b> John</span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <span class="font-size"><b>Apellido del Denunciante:</b> Doe</span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <span class="font-size"><b>Nro. Teléfono del Denunciante:</b> 555-43245234</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <br>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <span>
+                                                    <p style="text-align:justify;" class="font-size"><b>Dirección del Denunciante:</b>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <span class="font-size">
+                                                    <p style="text-align:justify;" class="font-size"><b>Dirección del Incidente:</b>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div ng-show="tab === 2" id="profile">
+                                <div class="col-xs-12">
+                                    <br>
+                                    <fieldset>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <span class="font-size">
+                                                    <b>Descripción del Incidente:</b>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div ng-show="tab === 3" id="messages">
+                                <div class="col-xs-12">
+                                    <br>
+                                    <fieldset>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12">
+                                                <span class="font-size">
+                                                    <b>Observación del Incidente:</b>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div ng-show="tab === 4" id="moreinformation">
+                                <br>
+                                <div role="tabpanel">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs " role="tablist">
+                                        <li role="presentation" ng-class="{ active:tabs === 1 }"><a href="" ng-click="selectTabs(1)" aria-controls="observaciones" role="tab" data-toggle="tab" class="spacing">Observaciones</a></li>
+                                        <li role="presentation" ng-class="{ active:tabs === 2 }"><a href="" ng-click="selectTabs(2)" aria-controls="llamadas" role="tab" data-toggle="tab" class="spacing">Llamadas</a></li>
+                                        <li role="presentation" ng-class="{ active:tabs === 3 }"><a href="" ng-click="selectTabs(3)" aria-controls="implicados" role="tab" data-toggle="tab" class="spacing">Implicados</a></li>
+                                        <li role="presentation" ng-class="{ active:tabs === 4 }"><a href="" ng-click="selectTabs(4)" aria-controls="datos_adjuntos" role="tab" data-toggle="tab" class="spacing">Datos Adjuntos</a></li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" ng-show="tabs === 1" id="observaciones">
+                                            <div class="col-xs-12">
+                                                <span class="font-size">
+                                                    <br>
+                                                    <b>Observación del Incidente:</b>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <label for="">Observación:</label>
+                                                    <textarea class="form-control" name="observaciones" id="message-text"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 pull-right">
+                                                <div class="pull-right">
+                                                    <button type="button" class="btn btn-success">Añadir</button>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" ng-show="tabs === 2" id="llamadas">
+                                            <div class="col-xs-12 background1">
+                                                <div class="table-responsive">
+                                                    <br>
+                                                    <fieldset>
+                                                        <table class="table">
+                                                            <thead>
+                                                                <th>Recurso</th>
+                                                                <th>Fecha</th>
+                                                                <th>Origen</th>
+                                                                <th>Destino</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>ISDN</td>
+                                                                    <td>13/03/2015 02:26pm</td>
+                                                                    <td>76059</td>
+                                                                    <td>1000</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" ng-show="tabs === 3" id="implicados">
+                                            <section class="col-xs-12">
+                                                <article class="col-xs-6">
+                                                </article>
+                                                <article class="col-xs-6 background1">
+                                                    <div class="col-xs-12">
+                                                        <div class="col-xs-12 text-center">
+                                                            <br>
+                                                            <div class="text-center">
+                                                                <div class="btn-group">
+                                                                    <button type="button" class="btn btn-success" ng-class="{ active:show === 1 }" ng-click="toggle(1)">Vehiculos</button>
+                                                                    <button type="button" class="btn btn-success" ng-class="{ active:show === 2 }" ng-click="toggle(2)">Personas</button>
+                                                                    <button type="button" class="btn btn-success" ng-class="{ active:show === 3 }"  ng-click="toggle(3)">Inmuebles</button>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                                <article class="col-xs-12 background1">
+                                                    <div class="col-xs-6 ">
+                                                        <div class="col-xs-12">
+                                                            <h4>Lista de Implicados</h4>
+                                                                <div class="col-lg-12">
+                                                                    <div class="">
+                                                                        <ul>
+                                                                            <li>Elementos:</li>
+                                                                                <ul>
+                                                                                    <li><a href="" ng-click="open()">Personas</a></li>
+                                                                                    <li><a href="">Vehiculos</a></li>
+                                                                                    <li><a href="">Inmuebles</a></li>
+                                                                                </ul>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <div ng-show="show == 1">
+                                                            <div class="col-xs-12">
+                                                                <div class="text-left">
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Marca:</label>
+                                                                            <input type="text" value="Chevrolet" placeholder="Marca:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Modelo:</label>
+                                                                            <input type="text" value="Aveo" placeholder="Modelo:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Color:</label>
+                                                                            <input type="text" value="Negro" placeholder="Color:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Año:</label>
+                                                                            <input type="text" value="2006" placeholder="Año:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Propietario:</label>
+                                                                            <input type="text" value="Sanchez" placeholder="Propietario:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Placa:</label>
+                                                                            <input type="text" value="8654123" placeholder="Placa:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Tlf de Contacto:</label>
+                                                                            <input type="text" value="8654123" placeholder="tlf_contacto:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Serial de Carroceria:</label>
+                                                                            <input type="text" value="566sa5d6a4s5546546" placeholder="Serial de Carroceria:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="form-group">
+                                                                            <label for="">Serial del Motor:</label>
+                                                                            <textarea class="form-control"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="pull-right">
+                                                                            <button type="button" class="btn btn-success">Guardar</button>
+                                                                            <button type="button" class="btn btn-danger">Cancelar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div ng-show="show == 2">
+                                                            <div class="col-xs-12">
+                                                                <div class="text-left">
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Nombre:</label>
+                                                                            <input type="text" value="Juan" placeholder="Nombre:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Nacionalidad:</label>
+                                                                            <input type="text" value="Venezolana" placeholder="Nacionalidad:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Primer Apellido:</label>
+                                                                            <input type="text" value="Perez"placeholder="Primer Apellido:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Fecha de Nacimiento:</label>
+                                                                            <input type="date" placeholder="Fecha de Nacimiento:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Segundo Apellido:</label>
+                                                                            <input type="text" value="Sanchez" placeholder="Segundo Apellido:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Sexo:</label>
+                                                                            <select name="" class="form-control">
+                                                                                <option value="">Femenino</option>
+                                                                                <option value="">Masculino</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Dni:</label>
+                                                                            <input type="text" value="8654123" placeholder="Sexo:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Dirección:</label>
+                                                                            <input type="text" value="5 de Julio"placeholder="Dreccion:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="form-group">
+                                                                            <label for="">Datos Adicionales:</label>
+                                                                            <textarea class="form-control"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="pull-right">
+                                                                            <button type="button" class="btn btn-success">Guardar</button>
+                                                                            <button type="button" class="btn btn-danger">Cancelar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div ng-show="show == 3">
+                                                            <div class="col-xs-12">
+                                                                <div class="text-left">
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Tipo de Inmueble:</label>
+                                                                            <input type="text" value="Casa" placeholder="Tipo de Inmueble:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">Propietario:</label>
+                                                                            <input type="text" value="Venezolana" placeholder="Nacionalidad:" class="form-control" id="recipient-name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="form-group">
+                                                                            <label for="">Dirección:</label>
+                                                                            <textarea class="form-control"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="form-group">
+                                                                            <label for="">Descripción:</label>
+                                                                            <textarea class="form-control"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="pull-right">
+                                                                            <button type="button" class="btn btn-success">Guardar</button>
+                                                                            <button type="button" class="btn btn-danger">Cancelar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </section>
+                                        </div>
+                                        <div role="tabpanel" ng-show="tabs === 4" id="datos_adjuntos">
+                                            <br>
+                                            <div class="col-xs-12 background1">
+                                                <div class="table-responsive">
+                                                    <br>
+                                                    <fieldset>
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                                <th>Fecha</th>
+                                                                <th>Operador</th>
+                                                                <th>Nombre de Archivo</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>15/03/2015</td>
+                                                                    <td>Operador (8)</td>
+                                                                    <td>Incidente.pdf</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Anexar Documentos:</label>
+                                                    <div class="btn btn-success btn-file">
+                                                        <i class="fa fa-paperclip"></i> Attachment
+                                                        <input type="file" name="attachment"/>
+                                                    </div>
+                                                    <p class="help-block">Max. 32MB</p>
+                                                </div>
+                                                <div class="col-xs-12 row">
+                                                    <div class="form-group">
+                                                        <label for="">Comentarios:</label>
+                                                        <textarea class="form-control" name="comentario" id="message-text"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 row">
+                                                    <button type="button" class="btn btn-success">Añadir</button>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <!-- /.row - inside box -->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div class="row">                                   
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+            </form>           
+        </section>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+    </div>
+    <!-- /.row (main row) -->
+</section>
+<script type="text/ng-template" id="edit">
+        <td><input type="text" ng-model="model.selected.name" /></td>
+        <td><input type="text" ng-model="model.selected.age" /></td>
+        <td>
+            <button ng-click="saveContact($index)">Save</button>
+            <button ng-click="reset()">Cancel</button>
+        </td>
+    </script>
+<div ng-controller="AgenciaCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Editar Implicados</h3>
+        </div>
+            <div class="modal-body">
+                <div ng-controller="DespachadorCtrl">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in model.contacts" ng-include="getTemplate(contact)">
+            </tr>
+        </tbody>
+    </table>
+    
+    <script type="text/ng-template" id="display">
+        <td>{{contact.name}}</td>
+        <td>{{contact.age}}</td>
+        <td>
+            <button ng-click="editContact(contact)">Edit</button>
+        </td>
+    </script>
+    <script type="text/ng-template" id="edit">
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="model.selected.name" /></td>
+        </tr>
+        <td>
+            <button ng-click="saveContact($index)">Save</button>
+            <button ng-click="reset()">Cancel</button>
+        </td>
+    </script>
+</div>
+<script src="assets/js/main.js"></script>

@@ -1,0 +1,409 @@
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-xs-12 pull-left">
+                <div class="id_p">
+                    <p><i class="glyphicon glyphicon-calendar"></i><span><span></span><b>Fecha y Hora Actual: </b>{{showDate() | date : 'short'}} </span></p>
+                </div>
+                <input type="hidden" ng-model="user.fecha" value="{{showDate() | date : 'short'}}">
+            </div>
+            <div class="col-lg-3 col-xs-12">
+            </div>
+
+            <!-- ./col -->
+            <div class="col-lg-2 col-xs-12 pull-right" style="padding-top:4px">
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- top row -->
+        <div class="row">
+            <div class="col-xs-12 connectedSortable">
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-12 connectedSortable">
+                <!-- Box (with bar chart) -->
+                <div class="box box-primary" id="loading-example">
+                    <div class="box-header">
+                        <!-- tools box -->
+                        <div class="pull-right box-tools">
+                        </div>
+                        <!-- /. tools -->          
+                        <h3 class="box-title"><i class="fa fa-fw fa-edit"></i>Mantenimiento de Usuarios</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div class="btn-group pull-right spacing-right">
+                            <button type="button" class="btn btn-primary" ng-click="addUser()"><i class="glyphicon glyphicon-plus"></i> Añadir Usuario</button>
+                            <br><br><br>
+                        </div>
+                        
+                        <div class="col-lg-12 table-responsive">
+                            <div class="container">
+                                <div class="col-md-3">
+                                    <div class="input-group add-on">
+                                        <input type="text" class="form-control search-query" ng-model="query" ng-change="search()" placeholder="Search">
+                                        <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-md-offset-6">
+                                    <select class="form-control pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes"></select>
+                                </div>
+                                <br><br><br>
+                                <div class="table-responsive container">
+                                    <table class="table table-striped table-hover">
+      <tbody><tr>
+        <th class="id"><a ng-click="sort_by('id')">Id <i class="fa fa-sort"></i></a></th>
+        <th class="name"><a ng-click="sort_by('name')">Name <i class="fa fa-sort"></i></a></th>
+        <th class="description" title="non-sortable">Description</th>
+        <th class="field3"><a ng-click="sort_by('field3')">Link <i class="fa fa-sort"></i></a></th>
+        <th class="field4"><a ng-click="sort_by('field4')">Field 4 <i class="fa fa-sort"></i></a></th>
+        <th class="field5"><a ng-click="sort_by('field5')">Field 5 <i class="fa fa-sort"></i></a></th>
+        <th></th>
+      </tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="9">{{sizes}}
+          <div class="text-center">
+            <ul class="pagination">
+              <li ng-class="{disabled: currentPage == 0}">
+                <a href="javascript:;" ng-click="prevPage()">« Prev</a>
+              </li>
+              <li ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()">
+                <a href="javascript:;" ng-bind="n + 1">1</a>
+              </li>
+              <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                <a href="javascript:;" ng-click="nextPage()">Next »</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr></tfoot>
+      <tbody>
+        <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.description}}</td>
+          <td><a href="#">{{item.field3}}</a></td>
+          <td>{{item.field4}}</td>
+          <td>{{item.field5}}</td>
+          <td><a href="#" ng-click="deleteItem($index)">x</a></td>
+        </tr>
+      </tbody>
+    </table>
+                                </div>
+                                    
+                            </div>
+                        </div>
+                        <!-- /.row - inside box -->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <div class="row">
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.box-footer -->
+                </div>
+                <!-- /.box -->          
+            </section>
+            <!-- /.Left col -->
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        </div>
+        <!-- /.row (main row) -->
+        <div class="espaciado"></div>
+    </section>
+    <!-- /.content -->
+<div ng-controller="AdminCtrl">
+    <script type="text/ng-template" id="adminModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Añadir Usuario</h3>
+        </div>
+            <div class="modal-body">
+                <form class="form-horizontal" name="" method="" action="">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Nombre y Apellido:</label>
+                                            <input type="text" ng-model="user.nombre" name="user_nombre" class="form-control" placeholder="Nombre y Apellido:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                <p>
+                                    <div class="">
+                                        <label for="">Número de Cédula:</label>
+                                        <input type="text" ng-model="user.cedula" name="cedula" class="form-control" placeholder="Numero de Cedula:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Cargo:</label>
+                                                <select name="my_select" class="simple_select6 form-control">
+                                                    <option>--  Operador Telefonico  --</option>
+                                                    <option>--  Operador Despachador  --</option>
+                                                    <option>--  Supervisor  --</option>
+                                                    <option>--  Otros  --</option>
+                                                </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">ID de Usuario:</label>
+                                            <input type="text" ng-model="user.id_usuario" name="usuario" class="form-control" placeholder="ID de Usuario:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Tlf de Contacto:</label>
+                                            <input type="text" ng-model="user.tlf_contacto" name="tlf_contacto" class="form-control" placeholder="Tlf de Contacto:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Correo Electrónico:</label>
+                                            <input type="text" ng-model="user.email" name="email" class="form-control" placeholder="Correo Electrónico:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Departamento u Oficina:</label>
+                                            <input type="text" ng-model="user.departamento" name="departamento" class="form-control" placeholder="Departamento u Oficina:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Ubicación:</label>
+                                            <input type="text" ng-model="user.ubicacion" name="ubicacion" class="form-control" placeholder="Ubicación:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p> 
+                                        <div class="">
+                                            <label for="">Coordinación o Gerencia:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Roles Asignados:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Operador Telefónico  --</option>
+                                                <option>--  Operador Despachador  --</option>
+                                                <option>--  Supervisor  --</option>
+                                                <option>--  Gestionador de Unidades  --</option>
+                                                <option>--  Consultor de Históricos  --</option>
+                                                <option>--  Unidad  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Asignar clave de Acceso:</label>
+                                            <input type="text" ng-model="user.asignar_clave" name="asignar_clave" class="form-control" placeholder="Asignar clave de Acceso:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Caducidad de la Clave:</label>
+                                            <input type="text" ng-model="user.clave" name="caducidad_clave" class="form-control" placeholder="Caducidad de la Clave:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-4 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Estado del Usuario:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Activo  --</option>
+                                                <option>--  Inactivo  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                </form>
+            </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </script>
+</div>
+<div ng-controller="AdminCtrl">
+    <script type="text/ng-template" id="editModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Editar Usuario</h3>
+        </div>
+            <div class="modal-body">
+                <form class="form-horizontal" name="" method="" action="">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Nombre y Apellido:</label>
+                                            <input type="text" ng-model="user.nombre" name="user_nombre" class="form-control" placeholder="Nombre y Apellido:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                <p>
+                                    <div class="">
+                                        <label for="">Número de Cédula:</label>
+                                        <input type="text" ng-model="user.cedula" name="cedula" class="form-control" placeholder="Numero de Cedula:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Cargo:</label>
+                                                <select name="my_select" class="simple_select6 form-control">
+                                                    <option>--  Operador Telefonico  --</option>
+                                                    <option>--  Operador Despachador  --</option>
+                                                    <option>--  Supervisor  --</option>
+                                                    <option>--  Otros  --</option>
+                                                </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">ID de Usuario:</label>
+                                            <input type="text" ng-model="user.id_usuario" name="usuario" class="form-control" placeholder="ID de Usuario:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Tlf de Contacto:</label>
+                                            <input type="text" ng-model="user.tlf_contacto" name="tlf_contacto" class="form-control" placeholder="Tlf de Contacto:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Correo Electrónico:</label>
+                                            <input type="text" ng-model="user.email" name="email" class="form-control" placeholder="Correo Electronico:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Departamento u Oficina:</label>
+                                            <input type="text" ng-model="user.departamento" name="departamento" class="form-control" placeholder="Departamento u Oficina:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Ubicación:</label>
+                                            <input type="text" ng-model="user.ubicacion" name="ubicacion" class="form-control" placeholder="Ubicación:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p> 
+                                        <div class="">
+                                            <label for="">Coordinación o Gerencia:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Roles Asignados:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Operador Telefónico  --</option>
+                                                <option>--  Operador Despachador  --</option>
+                                                <option>--  Supervisor  --</option>
+                                                <option>--  Gestionador de Unidades  --</option>
+                                                <option>--  Consultor de Históricos  --</option>
+                                                <option>--  Unidad  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Asignar clave de Acceso:</label>
+                                            <input type="text" ng-model="user.asignar_clave" name="asignar_clave" class="form-control" placeholder="Asignar clave de Acceso:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Caducidad de la Clave:</label>
+                                            <input type="text" ng-model="user.clave" name="caducidad_clave" class="form-control" placeholder="Caducidad de la Clave:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Estado del Usuario:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Activo  --</option>
+                                                <option>--  Inactivo  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                </form>
+            </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </script>
+</div>

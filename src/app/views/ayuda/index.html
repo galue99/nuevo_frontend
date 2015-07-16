@@ -1,0 +1,202 @@
+<section class="content">
+  <!-- Small boxes (Stat box) -->
+  <div class="row">
+    <div class="col-lg-3 col-xs-12 pull-left">
+      <div class="id_p">
+        <p><i class="glyphicon glyphicon-calendar"></i><span><span></span><b>Fecha y Hora Actual: </b>{{showDate() | date : 'short'}} </span></p>
+      </div>
+      <input type="hidden" ng-model="user.fecha" value="{{showDate() | date : 'short'}}">
+    </div>
+    <div class="col-lg-3 col-xs-12">
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-2 col-xs-12 pull-right" style="padding-top:4px">
+    </div>
+    <!-- ./col -->
+  </div>
+  <!-- /.row -->
+  <!-- top row -->
+  <div class="row">
+    <div class="col-xs-12 connectedSortable">
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+  <!-- Main row -->
+  <div class="row">
+    <!-- Left col -->
+    <section class="col-lg-12 connectedSortable">
+      <!-- Box (with bar chart) -->
+      <div class="box box-primary" id="loading-example">
+        <div class="box-header">
+          <!-- tools box -->
+          <div class="pull-right box-tools">
+          </div>
+          <!-- /. tools -->          
+          <h3 class="box-title"><i class="fa fa-fw fa-edit"></i> Mantenimiento de Roles</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="pull-right">
+                  <h5>| <a href="#" ng-click="rol('lg')">Añadir Rol</a> | <a href="#">Editar Rol</a> |</a> <a href="#">Eliminar Rol</a> |</h5>
+                </div>
+              </div>
+              <div class="col-md-12">
+              </div>
+              <div class="col-md-12">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <th></th>
+                      <th>Nombre</th>
+                      <th>Acción</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox" name="" value=""></td>
+                        <td>
+                          <h4>Operador Telefónico</h4>
+                        </td>
+                        <td>
+                          <h4><a href="#">Ver mas</a></h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="" value=""></td>
+                        <td>
+                          <h4>Operador Despachador</h4>
+                        </td>
+                        <td>
+                          <h4><a href="#">Ver mas</a></h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="" value=""></td>
+                        <td>
+                          <h4>Gerente Despachador</h4>
+                        </td>
+                        <td>
+                          <h4><a href="#">Ver mas</a></h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="" value=""></td>
+                        <td>
+                          <h4>Coordinador de Operadores</h4>
+                        </td>
+                        <td>
+                          <h4><a href="#">Ver mas</a></h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="" value=""></td>
+                        <td>
+                          <h4>Gestionador de Unidades Unidad</h4>
+                        </td>
+                        <td>
+                          <h4><a href="#">Ver mas</a></h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="" value=""></td>
+                        <td>
+                          <h4>Administrador</h4>
+                        </td>
+                        <td>
+                          <h4><a href="#">Ver mas</a></h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="" value=""></td>
+                        <td>
+                          <h4>Unidad</h4>
+                        </td>
+                        <td>
+                          <h4><a href="#">Ver mas</a></h4>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.row - inside box -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          <div class="row">
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.box-footer -->
+      </div>
+      <!-- /.box -->          
+    </section>
+    <!-- /.Left col -->
+    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+  </div>
+  <!-- /.row (main row) -->
+  <div class="espaciado"></div>
+</section>
+<!-- /.content -->
+<div ng-controller="AyudaCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Añadir Rol</h3>
+        </div>
+            <div class="modal-body">
+                <form class="form-horizontal" name="" method="" action="">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-6 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Nombre del Rol:</label>
+                                            <input type="text" ng-model="user.nombre_rol" name="user_nombre" class="form-control" placeholder="Nombre del Rol:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Descripción:</label>
+                                            <input type="text" ng-model="user.descripcion" name="descripcion" class="form-control" placeholder="Descripción:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-12 col-xs-12">
+                                    <label for="">Modulos:</label>
+                                    <div class="">
+                                      <div isteven-multi-select
+                                      input-model="addModules"
+                                      output-model="outputBrowsers"
+                                      button-label="icon name"
+                                      item-label="icon name maker"
+                                      tick-property="ticked">
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <p>
+                                        <div class="container">
+                                            <label for="">Modulos:</label>
+                                            
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                </form>
+            </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </script>
+</div>

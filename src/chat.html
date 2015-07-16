@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Sample test</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<h1>Hello world22222</h1>
+
+<input name='data' id="data"/>
+
+<div>
+    <input type='submit' onclick="send()"></div>
+<div id="log">
+
+</div>
+<script type="text/javascript" charset="utf-8">
+    var WS = undefined;
+    var send = function () {
+        // Construct a msg object containing the data the server needs to process the message from the chat client.
+        var msg = {
+            type: "chat:message",
+            data: {message: document.getElementById("data").value},
+            session_id: "alacret",
+            date: Date.now()
+        };
+
+        // Send the msg object as a JSON-formatted string.
+        WS.send(JSON.stringify(msg));
+
+    };
+
+    $(document).ready(function () {
+
+        if ("WebSocket" in window) {
+            var ws = new WebSocket("ws://localhost:8000/websocket/");
+            WS = ws;
+            ws.onopen = function () {
+            };
+            ws.onmessage = function (evt) {
+                var log_list = $("#log");
+                var received_msg = evt.data;
+                var html = log_list.html();
+                html += "<li>" + received_msg + "</li>";
+                log_list.html(html);
+            };
+            ws.onclose = function () {
+            };
+        } else {
+            alert("WebSocket not supported");
+        }
+    });
+</script>
+</body>
+</html>

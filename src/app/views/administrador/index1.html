@@ -1,0 +1,422 @@
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-xs-12 pull-left">
+                <div class="id_p">
+                    <p><i class="glyphicon glyphicon-calendar"></i><span><span></span><b>Fecha y Hora Actual: </b>{{showDate() | date : 'short'}} </span></p>
+                </div>
+                <input type="hidden" ng-model="user.fecha" value="{{showDate() | date : 'short'}}">
+            </div>
+            <div class="col-lg-3 col-xs-12">
+            </div>
+            <div class="col-lg-2 col-xs-6 pull-right spacing-buttons" style="padding-top:4px">
+                <a class="btn btn-success btn-lg btn-block" ng-click="submitForm()" role="button">
+                <i class="glyphicon glyphicon-floppy-saved"></i><br>Guardar
+                </a>
+            </div>
+            <div class="col-lg-2 col-xs-6 pull-right spacing-buttons" style="padding-top:4px">
+                <a class="btn btn-danger btn-lg btn-block" role="button">
+                <i class="glyphicon glyphicon-remove"></i><br>Anular
+                </a>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-2 col-xs-12 pull-right" style="padding-top:4px">
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- top row -->
+        <div class="row">
+            <div class="col-xs-12 connectedSortable">
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-12 connectedSortable">
+                <!-- Box (with bar chart) -->
+                <div class="box box-primary" id="loading-example">
+                    <div class="box-header">
+                        <!-- tools box -->
+                        <div class="pull-right box-tools">
+                        </div>
+                        <!-- /. tools -->          
+                        <h3 class="box-title"><i class="fa fa-fw fa-edit"></i>Mantenimiento de Usuarios</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div class="btn-group pull-right spacing-right">
+                            <button type="button" class="btn btn-primary" ng-click="addUser()"><i class="glyphicon glyphicon-plus"></i> Añadir Usuario</button>
+                        </div>
+                        <div class="col-lg-12 table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center">Nro.</th>
+                                        <th style="text-align:center">Id Usuario</th>
+                                        <th style="text-align:center">Nombre</th>
+                                        <th style="text-align:center">Apellido</th>
+                                        <th style="text-align:center">Número de Cédula</th>
+                                        <th style="text-align:center">Cargo</th>
+                                        <th style="text-align:center">Tlf de Contacto</th>
+                                        <th style="text-align:center">Correo Electrónico</th>
+                                        <th style="text-align:center">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="center">1</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td style="text-align:center"><div class="btn-group">
+                                                    <button type="button" ng-click="editUser()" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                    <button type="button" class="btn btn-default" ng-click="confirm()"><i class="glyphicon glyphicon-trash"></i></button>
+                                                </div></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">2</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td style="text-align:center">
+                                            <div class="btn-group">
+                                                <button type="button" ng-click="editUser()" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                <button type="button" class="btn btn-default" ng-click="confirm()"><i class="glyphicon glyphicon-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">3</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td align="center">Joe Doe</td>
+                                        <td style="text-align:center">
+                                            <div class="btn-group">
+                                                <button type="button" ng-click="editUser()" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                <button type="button" class="btn btn-default" ng-click="confirm()"><i class="glyphicon glyphicon-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.row - inside box -->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <div class="row">
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.box-footer -->
+                </div>
+                <!-- /.box -->          
+            </section>
+            <!-- /.Left col -->
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        </div>
+        <!-- /.row (main row) -->
+        <div class="espaciado"></div>
+    </section>
+    <!-- /.content -->
+<div ng-controller="AdminCtrl">
+    <script type="text/ng-template" id="adminModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Añadir Usuario</h3>
+        </div>
+            <div class="modal-body">
+                <form class="form-horizontal" name="" method="" action="">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Nombre y Apellido:</label>
+                                            <input type="text" ng-model="user.nombre" name="user_nombre" class="form-control" placeholder="Nombre y Apellido:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                <p>
+                                    <div class="">
+                                        <label for="">Número de Cédula:</label>
+                                        <input type="text" ng-model="user.cedula" name="cedula" class="form-control" placeholder="Numero de Cedula:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Cargo:</label>
+                                                <select name="my_select" class="simple_select6 form-control">
+                                                    <option>--  Operador Telefonico  --</option>
+                                                    <option>--  Operador Despachador  --</option>
+                                                    <option>--  Supervisor  --</option>
+                                                    <option>--  Otros  --</option>
+                                                </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">ID de Usuario:</label>
+                                            <input type="text" ng-model="user.id_usuario" name="usuario" class="form-control" placeholder="ID de Usuario:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Tlf de Contacto:</label>
+                                            <input type="text" ng-model="user.tlf_contacto" name="tlf_contacto" class="form-control" placeholder="Tlf de Contacto:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Correo Electrónico:</label>
+                                            <input type="text" ng-model="user.email" name="email" class="form-control" placeholder="Correo Electronico:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Departamento u Oficina:</label>
+                                            <input type="text" ng-model="user.departamento" name="departamento" class="form-control" placeholder="Departamento u Oficina:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Ubicación:</label>
+                                            <input type="text" ng-model="user.ubicacion" name="ubicacion" class="form-control" placeholder="Ubicación:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p> 
+                                        <div class="">
+                                            <label for="">Coordinación o Gerencia:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Roles Asignados:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Operador Telefónico  --</option>
+                                                <option>--  Operador Despachador  --</option>
+                                                <option>--  Supervisor  --</option>
+                                                <option>--  Gestionador de Unidades  --</option>
+                                                <option>--  Consultor de Históricos  --</option>
+                                                <option>--  Unidad  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Asignar clave de Acceso:</label>
+                                            <input type="text" ng-model="user.asignar_clave" name="asignar_clave" class="form-control" placeholder="Asignar clave de Acceso:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Caducidad de la Clave:</label>
+                                            <input type="text" ng-model="user.clave" name="caducidad_clave" class="form-control" placeholder="Caducidad de la Clave:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Estado del Usuario:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Activo  --</option>
+                                                <option>--  Inactivo  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                </form>
+            </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </script>
+</div>
+<div ng-controller="AdminCtrl">
+    <script type="text/ng-template" id="editModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Editar Usuario</h3>
+        </div>
+            <div class="modal-body">
+                <form class="form-horizontal" name="" method="" action="">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Nombre y Apellido:</label>
+                                            <input type="text" ng-model="user.nombre" name="user_nombre" class="form-control" placeholder="Nombre y Apellido:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                <p>
+                                    <div class="">
+                                        <label for="">Número de Cédula:</label>
+                                        <input type="text" ng-model="user.cedula" name="cedula" class="form-control" placeholder="Numero de Cedula:">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Cargo:</label>
+                                                <select name="my_select" class="simple_select6 form-control">
+                                                    <option>--  Operador Telefonico  --</option>
+                                                    <option>--  Operador Despachador  --</option>
+                                                    <option>--  Supervisor  --</option>
+                                                    <option>--  Otros  --</option>
+                                                </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">ID de Usuario:</label>
+                                            <input type="text" ng-model="user.id_usuario" name="usuario" class="form-control" placeholder="ID de Usuario:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Tlf de Contacto:</label>
+                                            <input type="text" ng-model="user.tlf_contacto" name="tlf_contacto" class="form-control" placeholder="Tlf de Contacto:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Correo Electrónico:</label>
+                                            <input type="text" ng-model="user.email" name="email" class="form-control" placeholder="Correo Electronico:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Departamento u Oficina:</label>
+                                            <input type="text" ng-model="user.departamento" name="departamento" class="form-control" placeholder="Departamento u Oficina:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Ubicación:</label>
+                                            <input type="text" ng-model="user.ubicacion" name="ubicacion" class="form-control" placeholder="Ubicación:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p> 
+                                        <div class="">
+                                            <label for="">Coordinación o Gerencia:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                                <option>--  o  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Roles Asignados:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Operador Telefónico  --</option>
+                                                <option>--  Operador Despachador  --</option>
+                                                <option>--  Supervisor  --</option>
+                                                <option>--  Gestionador de Unidades  --</option>
+                                                <option>--  Consultor de Históricos  --</option>
+                                                <option>--  Unidad  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Asignar clave de Acceso:</label>
+                                            <input type="text" ng-model="user.asignar_clave" name="asignar_clave" class="form-control" placeholder="Asignar clave de Acceso:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Caducidad de la Clave:</label>
+                                            <input type="text" ng-model="user.clave" name="caducidad_clave" class="form-control" placeholder="Caducidad de la Clave:">
+                                        </div>
+                                    </p>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <p>
+                                        <div class="">
+                                            <label for="">Estado del Usuario:</label>
+                                            <select name="my_select" class="simple_select6 form-control">
+                                                <option>--  Activo  --</option>
+                                                <option>--  Inactivo  --</option>
+                                            </select>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                </form>
+            </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </script>
+</div>

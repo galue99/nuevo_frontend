@@ -1,0 +1,31 @@
+{
+  "name": "fenixApp",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular-animate": "~1.3.4",
+    "angular-cookies": "~1.3.4",
+    "angular-touch": "~1.3.4",
+    "angular-sanitize": "~1.3.4",
+    "jquery": "~2.1.1",
+    "angular-resource": "~1.3.4",
+    "angular-ui-router": "~0.2.13",
+    "bootstrap-sass-official": "~3.3.1",
+    "angular-bootstrap": "~0.10.0",
+    "angular": "~1.3.4",
+    "ng-websocket": "~0.2.1",
+    "underscore": "~1.8.3",
+    "angular-mask": "~3.0.12",
+    "eeh-navigation": "4.0.0-alpha4",
+    "sweetalert": "~1.0.1",
+    "angular-h-sweetalert": "~1.4.5",
+    "isteven-angular-multiselect": "4.0.0",
+    "angular-google-maps": "latest"
+    
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.4"
+  },
+  "resolutions": {
+    "angular": "~1.3.4"
+  }
+}

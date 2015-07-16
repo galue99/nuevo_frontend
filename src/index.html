@@ -1,0 +1,127 @@
+<!doctype html>
+<html ng-app="fenixApp" lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>fenixApp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="assets/css/AdminLTE.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/ionicons.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <!-- bower:css -->
+        <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css({.tmp/serve,src}) styles/app.css -->
+        <!-- inject:css -->
+        <!-- css files will be automatically insert here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+
+    </head>
+    <body class="skin-blue">
+        <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+                <header class="header">
+
+        <!--    <a href="index.html" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+            <!--     <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a class="navbar-brand" href="#">Sistema de Emergencia Fenix</a>
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn" data-toggle="offcanvas" role="button">
+
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>Jane Doe <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header bg-light-blue">
+                                    <img src="assets/images/avatar3.png" class="img-circle" alt="User Image" />
+                                    <p>
+                                        Jane Doe
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#/login" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side strech">
+                <!-- Content Header (Page header) -->
+                <!-- Main content -->
+                <!-- sidebar -->
+                <br>
+                <eeh-navigation-sidebar root-menu-name="'nav'"
+                        collapsed-sidebar-icon-class="fa-arrow-left"
+                        expanded-sidebar-icon-class="fa-arrow-right"
+                        collapsed-menu-item-icon-class="fa-chevron-left"
+                        expanded-menu-item-icon-class="fa-chevron-down">
+                    <ui-view></ui-view>
+                </eeh-navigation-sidebar>
+
+                <!-- /.content -->
+                
+            </aside>
+            <!-- /.right-side -->
+        </div>
+        <!-- ./wrapper -->
+        <br>
+        
+        <!-- build:js(src) scripts/vendor.js -->
+        <!-- bower:js -->
+        <!-- run `gulp inject` to automatically populate bower script dependencies -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+
+        <!-- inject:js -->
+        <!-- js files will be automatically insert here -->
+        <!-- endinject -->
+        <!-- inject:partials -->
+        <!-- angular templates will be automatically converted in js and inserted here -->
+        <!-- endinject -->
+        <!-- endbuild -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>

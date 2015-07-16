@@ -1,0 +1,75 @@
+<div class="row">
+	<h3>Modal Mensajes</h3>
+	<div class="col-lg-12">
+		<div class="col-lg-12">
+			<div class="col-lg-12">
+				<pre>
+					<code>
+						$scope.success = function() {
+	        				&nbsp;&nbsp;&nbsp;&nbsp;sweet.show('Amazing', 'You\'ve done it', 'success');
+	    				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+					</code>
+				</pre>
+				<p><strong>Mensaje de Aceptación</strong></p>
+				<button type="button" class="btn btn-success" ng-click="success()">button</button>
+				<hr>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="col-lg-12">
+				<pre>
+					<code>
+						$scope.fail = function() {
+          					&nbsp;&nbsp;&nbsp;&nbsp;sweet.show('Oops...', 'Can\'t believe it\'s you', 'error');
+        				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+					</code>
+				</pre>
+				<p><strong>Mensaje de Error</strong></p>
+				<button type="button" class="btn btn-danger" ng-click="fail()">button</button>
+				<hr>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="col-lg-12">
+				<pre>
+					<code>
+						$scope.confirm = function() {
+				          	&nbsp;&nbsp;&nbsp;&nbsp;sweet.show({
+				            &nbsp;&nbsp;&nbsp;&nbsp;  title: 'Confirm',
+				            &nbsp;&nbsp;&nbsp;&nbsp;  text: 'Delete this file?',
+				            &nbsp;&nbsp;&nbsp;&nbsp;  type: 'warning',
+				            &nbsp;&nbsp;&nbsp;&nbsp;  showCancelButton: true,
+				            &nbsp;&nbsp;&nbsp;&nbsp;  confirmButtonColor: '#DD6B55',
+				            &nbsp;&nbsp;&nbsp;&nbsp;  confirmButtonText: "Yes, delete it!",
+				            &nbsp;&nbsp;&nbsp;&nbsp;  closeOnConfirm: false
+				            &nbsp;&nbsp;&nbsp;&nbsp;	}, function() {
+				            &nbsp;&nbsp;&nbsp;&nbsp;  sweet.show('Deleted!', 'The file has been deleted.', 'success');
+				          	&nbsp;&nbsp;&nbsp;&nbsp;});
+				        &nbsp;&nbsp;&nbsp;&nbsp;};
+					</code>
+				</pre>
+				<p><strong>Mensaje de Confirmación</strong></p>
+				<button type="button" class="btn btn-warning" ng-click="confirm()">button</button>
+				<hr>
+			</div>
+		</div>
+		<div class="col-lg-12">
+			<div class="col-lg-12">
+				<pre>
+					<code>
+						$scope.html = function() {
+					        &nbsp;&nbsp;&nbsp;&nbsp;sweet.show({
+					        &nbsp;&nbsp;&nbsp;&nbsp;    title: 'HTML <small>Title</small>!',
+					        &nbsp;&nbsp;&nbsp;&nbsp;    text: 'A custom <span style="color:#F8BB86">html<span> message.',
+					        &nbsp;&nbsp;&nbsp;&nbsp;    html: true
+					    &nbsp;&nbsp;&nbsp;&nbsp;    });
+	    				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};	
+					</code>
+				</pre>
+				<p><strong>Mensaje de Información</strong></p>
+				<button type="button" class="btn btn-info" ng-click="html()">button</button>
+				<hr>
+			</div>
+		</div>
+	</div>
+</div>
